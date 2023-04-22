@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main() {
+    int n = 3; // size of the matrix
+    int matrix[n][n];
+
+    // initialize the matrix with some values
+    matrix[0][0] = 2;
+    matrix[0][1] = 4;
+    matrix[0][2] = 1;
+    matrix[1][0] = -1;
+    matrix[1][1] = 3;
+    matrix[1][2] = 5;
+    matrix[2][0] = 0;
+    matrix[2][1] = -2;
+    matrix[2][2] = 6;
+
+    // print the original matrix
+    printf("Original matrix:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    // replace diagonal elements less than zero by one
+    for (int i = 0; i < n; i++) {
+        if (matrix[i][i] < 0) {
+            matrix[i][i] = 1;
+        }
+    }
+
+    // print the updated matrix
+    printf("\nUpdated matrix:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
